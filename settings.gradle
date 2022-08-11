@@ -1,0 +1,5 @@
+rootProject.name = "Iris"
+include ':app'
+include ':lib'
+include ':logic'
+include ':processor'

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "wtf.zv.iris.proto.android";
+package wtf.zv.iris.proto.android;
+
+message RetainedPost {
+  // Represents the direct URL to a post image
+  string imageUrl = 1;
+
+  // Represents the public URL to a post
+  string postUrl = 2;
+
+  // Represents the canonical title of a post
+  string title = 3;
+
+  // Represents the timestamp the post was received at
+  int64 timestamp = 4;
+}
+
+message RetainedPosts {
+  repeated RetainedPost posts = 1;
+}

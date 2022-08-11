@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "wtf.zv.iris.proto";
+package wtf.zv.iris.proto;
+
+import "instagram_post.proto";
+import "generics.proto";
+import "config.proto";
+import "status.proto";
+
+import "google/protobuf/empty.proto";
+
+service IrisClientService {
+  rpc provideNewPosts (google.protobuf.Empty) returns (stream wtf.zv.iris.proto.Post);
+  rpc provideConfigStream (google.protobuf.Empty) returns (stream wtf.zv.iris.proto.Config);
+
+  rpc provideConfig (google.protobuf.Empty) returns (wtf.zv.iris.proto.Config);
+
+  rpc updateConfig (wtf.zv.iris.proto.Config) returns (wtf.zv.iris.proto.Status);
+}

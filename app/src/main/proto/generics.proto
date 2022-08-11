@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "wtf.zv.iris.proto";
+package wtf.zv.iris.proto;
+
+import "reddit_post.proto";
+import "instagram_post.proto";
+
+message Post {
+  oneof post {
+    wtf.zv.iris.proto.RedditPost redditPost = 1;
+    wtf.zv.iris.proto.InstagramPost instagramPost = 2;
+  }
+}

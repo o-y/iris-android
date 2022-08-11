@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "wtf.zv.iris.proto";
+package wtf.zv.iris.proto;
+
+message Config {
+  // Whether or not the home screen wallpaper should be updated.
+  bool update_home_wallpaper = 1;
+
+  // Whether or not the lock screen wallpaper should be updated.
+  bool update_lockscreen_wallpaper = 2;
+
+  // Whether or not notifications should be displayed. If lockscreen_wallpaper
+  // is set to false, then notifications will be set to private on the lock
+  // screen as well.
+  bool display_notifications = 3;
+
+  // Implicitly set to false, if set to true then the daemon will enter a lock
+  // down state where new posts are ignored, all notifications will be cleared
+  // and the home/lock screen wallpapers will be reset to their original state.
+  // Upon setting this back to false (assuming at some point it was true), the
+  // initial boot up logic should be re-initiated by the implementer of the
+  // consumer.
+  bool disable_daemon = 4;
+}

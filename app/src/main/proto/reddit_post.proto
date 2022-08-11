@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "wtf.zv.iris.proto";
+package wtf.zv.iris.proto;
+
+message RedditPost {
+  // Represents the direct URL to the Reddit post image
+  string imageUrl = 1;
+
+  // Represents the public URL to the Reddit post
+  string postUrl = 2;
+
+  // Represents the title of the post. This replaces the author field for Reddit
+  string title = 3;
+
+  // Represents the subreddit of the Reddit post
+  string subreddit = 4;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "wtf.zv.iris.proto";
+package wtf.zv.iris.proto;
+
+message InstagramPost {
+  // Represents the direct URL to the Instagram post image
+  string imageUrl = 1;
+
+  oneof postIdOrUrl {
+    // Represents an amalgamation of the author ID and media ID
+    string postId = 2;
+
+    // Represents the post URL
+    string postUrl = 3;
+  }
+
+  // Represents the author/poster of the image
+  string author = 4;
+}
+
